@@ -15,11 +15,15 @@ while run:
 
     if guess in word and guesses_left > 0:
         letter_count = word.count(guess)
-        from_index = 0
+        #from_index = 0
 
-        for i in range(5):
-            index = word.index(guess, from_index, len(word))
-            from_index += 1
+        if letter_count > 1:
+            for i in range(len(word)):
+                index = word.index(guess, i, len(word))
+            # from_index += 1
+                guessed_word[index] = guess
+        else:
+            index = word.index(guess)
             guessed_word[index] = guess
 
         #söker framifrån
@@ -42,3 +46,4 @@ while run:
     print(guessed_word)
     print(guessed_letters)
     print(guesses_left)
+    print(len(word))
