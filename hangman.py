@@ -15,24 +15,38 @@ while run and guesses_left > 0:
     print()
     guess = input("Gissa på en bokstav: ")
     guessed_letters.append(guess)
-
     
-
     if guess in word and guesses_left > 0:
         letter_count = word.count(guess)
         index = 0
 
-        if letter_count > 1:
-            for i in range(len(word)):
+        for i in range(len(word)):
+            try:
                 index = word.index(guess, i, len(word))
                 print(index)
                 guessed_word[index] = guess
-        else:
-            index = word.index(guess)
-            guessed_word[index] = guess
+            except ValueError:
+                print("nej")
+                
         
     else:
         guesses_left -= 1
+
+    # if guess in word and guesses_left > 0:
+    #     letter_count = word.count(guess)
+    #     index = 0
+
+    #     if letter_count > 1:
+    #         for i in range(len(word)):
+    #             index = word.index(guess, i, len(word))
+    #             print(index)
+    #             guessed_word[index] = guess
+    #     else:
+    #         index = word.index(guess)
+    #         guessed_word[index] = guess
+        
+    # else:
+    #     guesses_left -= 1
     
 
     print()
