@@ -1,4 +1,5 @@
 from random import choice
+import os
 
 guesses_left = 8
 word_list = ["kycklingprinskorv", "choklad", "bedbug", "bugbed", "sabylla incidenten", "trocadero incidenten", "mmm marabou", "benfri kotlettrad", "supercalifragilisticexpialidocious", "fioccinaucinihilipilification"]
@@ -42,14 +43,20 @@ while run and guesses_left > 0:
         else:
             guesses_left -= 1
 
+    os.system("cls")
+
     if guesses_left == 8:
-        print()
+        for i in range(7):
+            print()
 
     elif guesses_left == 7:
+        for i in range(5):
+            print()
         print(" _ _")
         print("|   |")
 
     elif guesses_left == 6:
+        print()
         for i in range(4):
             print("  |")
         print(" _ _")
