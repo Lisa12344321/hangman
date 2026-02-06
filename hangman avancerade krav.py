@@ -1,6 +1,9 @@
 from random import choice
 import os
 
+os.system("cls")
+for i in range(7):
+    print()
 guesses_left = 8
 word_list = ["kycklingprinskorv", "choklad", "bedbug", "bugbed", "sabylla incidenten", "trocadero incidenten", "mmm marabou", "benfri kotlettrad", "supercalifragilisticexpialidocious", "fioccinaucinihilipilification"]
 word = choice(word_list)
@@ -119,7 +122,6 @@ while run and guesses_left > 0:
     
 
     if "".join(guessed_word) == word:
-        print("......................................................")
         print()
         print(f"Rätt! Ordet var: {word}")
         print(f"Du fick {guesses_left} poäng!")
@@ -134,6 +136,9 @@ while run and guesses_left > 0:
     if lose or win:
         play_again = input("Spela igen (ENTER)? ")
         if play_again == "":
+            os.system("cls")
+            for i in range(7):
+                print()
             guesses_left = 8
             word = choice(word_list)
             guessed_letters = []
